@@ -29,8 +29,6 @@ set background=dark
 "show a colored line to show max length
 set colorcolumn=81
 
-"fix terminal color issues
-set t_Co=256
 
 "nasm
 set ft=nasm
@@ -52,18 +50,11 @@ autocmd BufWinEnter * NERDTreeMirror
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-
-""""""""""""""""""""""""""""""
-" => MRU plugin
-""""""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
 
 "youcompleteme
 let g:ycm_global_ycm_extra_conf = '/home/uidm1433/.vim_runtime/.ycm_extra_conf.py'

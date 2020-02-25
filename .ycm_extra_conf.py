@@ -14,10 +14,16 @@ BASE_FLAGS = [
         '-fexceptions',
         '-ferror-limit=10000',
         '-DNDEBUG',
-        '-std=c++1z',
-        '-xc++',
+        '-std=c99',
+        '-x',
+        'c',
+        '-isystem',
         '-I/usr/lib/',
-        '-I/usr/include/'
+        '-I/usr/include/',
+    #custom
+        '-I/home/uidm1433/Documents/rck/rabbit/src/RIOT/core/include/',
+        '-I/home/uidm1433/Documents/rck/rabbit/src/app/rabbit_app/bin/pkg/rabbit_v5/paho-mqtt/MQTTPacket/src/',
+        '-I/home/uidm1433/Documents/rck/rabbit/src/app/rabbit_app/bin/pkg/rabbit_v5/paho-mqtt/MQTTClient-C/src/'
         ]
 
 SOURCE_EXTENSIONS = [
