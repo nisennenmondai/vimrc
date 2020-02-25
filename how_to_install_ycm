@@ -1,0 +1,86 @@
+=========================================================
+HOW TO INSTALL VIM FROM SOURCE
+=========================================================
+
+* For a Debian-like Linux distribution like Ubuntu, type
+
+sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev
+libgtk2.0-dev libatk1.0-dev libbonoboui2-dev
+libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev
+python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
+
+* Remove vim if you have it already (which is most likely...)
+        sudo apt remove vim vim-runtime gvim
+        sudo apt remove vim-tiny vim-common vim-gui-common vim-nox
+
+        * Now configure and compile vim, for Ubuntu users, you can only use python2 or 3
+
+        cd ~
+        git clone https://github.com/vim/vim.git
+        cd vim
+        ./configure --with-features=huge
+        --enable-multibyte
+        --enable-python3interp=yes
+        --with-python3-config-dir=/usr/lib/python3.5/config
+        --prefix=/home/$USER/vimc
+
+        sudo make
+        sudo make install
+
+        * Set vim as your default editor with update-alternatives
+        sudo update-alternatives --install /usr/bin/editor editor /home/pauline/vimc/bin/vim 1
+        sudo update-alternatives --set editor /home/pauline/vimc/bin/vim
+        sudo update-alternatives --install /usr/bin/vi vi /home/pauline/vimc/bin/vim 1
+        sudo update-alternatives --set vi /home/pauline/vimc/bin/vim
+
+        =========================================================
+        HOW TO INSTALL YOUCOMPLETEME
+        =========================================================
+
+        * Install dependencies
+        sudo apt-get install build-essential cmake
+        sudo apt-get install python-dev python3-dev
+
+        * Get YouCompleteMe
+        cd .vim_runtime/sources_forked/
+        git clone https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
+        cd YouCompleteMe
+        git submodule update --init --recursive
+
+        * Install with C semantic support
+        cd ~/path/YouCompleteMe
+        ./install.py --clang-completer
+
+        * Configuration
+        cp .ycm_extra_conf.py in .vim_runtime and make sure it is being loaded by
+        vim on startup
+
+        let g:ycm_global_ycm_extra_conf = 'path/.vim_runtime/.ycm_extra_conf.py'
+
+=========================================================
+XTERM
+=========================================================
+
+add this code to your ~/.profile
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then                             
+        export TERM='xterm-256color'                                             
+else                                                                             
+        export TERM='xterm-color'                                                
+fi
+
+==========================================================
+FUNCTION COLORS IN VIM --> C.VIM FILE OF YOUR CURRENT VIM
+==========================================================
+
+in -> /home/$USER/vimc/share/vim/vim81/syntax/c.vim
+
+syn match    cCustomParen    "(" contains=cParen contains=cCppParen
+syn match    cCustomFunc     "\w\+\s*(" contains=cCustomParen
+syn match    cCustomScope    "::"
+syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
+hi def link cCustomFunc  Function
+hi def link cCustomClass Function
+
+
+
