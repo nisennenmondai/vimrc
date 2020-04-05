@@ -28,10 +28,11 @@ python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
         sudo make install
 
         * Set vim as your default editor with update-alternatives
-        sudo update-alternatives --install /usr/bin/editor editor /home/pauline/vimc/bin/vim 1
-        sudo update-alternatives --set editor /home/pauline/vimc/bin/vim
-        sudo update-alternatives --install /usr/bin/vi vi /home/pauline/vimc/bin/vim 1
-        sudo update-alternatives --set vi /home/pauline/vimc/bin/vim
+        sudo update-alternatives --install /usr/bin/editor editor /home/$USER/vimc/bin/vim 1
+        sudo update-alternatives --set editor /home/$USER/vimc/bin/vim
+        sudo update-alternatives --install /usr/bin/vi vi /home/$USER/vimc/bin/vim 1
+        sudo update-alternatives --install /usr/bin/vim vim /home/$USER/vimc/bin/vim 1
+        sudo update-alternatives --set vi /home/$USER/vimc/bin/vim
 
         =========================================================
         HOW TO INSTALL YOUCOMPLETEME

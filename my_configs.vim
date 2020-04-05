@@ -57,7 +57,7 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 "youcompleteme
-let g:ycm_global_ycm_extra_conf = '/home/uidm1433/.vim_runtime/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/pi/.vim_runtime/.ycm_extra_conf.py'
 let g:ycm_max_diagnostics_to_display = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 

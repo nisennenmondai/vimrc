@@ -21,9 +21,6 @@ BASE_FLAGS = [
         '-I/usr/lib/',
         '-I/usr/include/',
     #custom
-        '-I/home/uidm1433/Documents/rck/rabbit/src/RIOT/core/include/',
-        '-I/home/uidm1433/Documents/rck/rabbit/src/app/rabbit_app/bin/pkg/rabbit_v5/paho-mqtt/MQTTPacket/src/',
-        '-I/home/uidm1433/Documents/rck/rabbit/src/app/rabbit_app/bin/pkg/rabbit_v5/paho-mqtt/MQTTClient-C/src/'
         ]
 
 SOURCE_EXTENSIONS = [
