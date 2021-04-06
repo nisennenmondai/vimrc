@@ -21,7 +21,7 @@ python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
         ./configure --with-features=huge
         --enable-multibyte
         --enable-python3interp=yes
-        --with-python3-config-dir=/usr/lib/python3.5/config
+        --with-python3-config-dir=/usr/lib/python3.8/config (must be at least 3.6)
         --prefix=/home/$USER/vimc
 
         sudo make
@@ -43,6 +43,7 @@ python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
         sudo apt-get install python-dev python3-dev
 
         * Get YouCompleteMe
+        cd ..
         cd .vim_runtime/sources_forked/
         git clone https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
         cd YouCompleteMe
@@ -52,23 +53,8 @@ python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
         cd ~/path/YouCompleteMe
         ./install.py --clang-completer
 
-        * Configuration
-        cp .ycm_extra_conf.py in .vim_runtime and make sure it is being loaded by
-        vim on startup
-
+        * Configuration change path in my_configs.vim
         let g:ycm_global_ycm_extra_conf = 'path/.vim_runtime/.ycm_extra_conf.py'
-
-=========================================================
-XTERM
-=========================================================
-
-add this code to your ~/.profile
-
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then                             
-        export TERM='xterm-256color'                                             
-else                                                                             
-        export TERM='xterm-color'                                                
-fi
 
 ==========================================================
 FUNCTION COLORS IN VIM --> C.VIM FILE OF YOUR CURRENT VIM
@@ -82,6 +68,3 @@ syn match    cCustomScope    "::"
 syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
 hi def link cCustomFunc  Function
 hi def link cCustomClass Function
-
-
-
