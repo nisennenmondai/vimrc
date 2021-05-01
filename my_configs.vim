@@ -20,8 +20,8 @@ nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>i
 
 "tab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=8
+set shiftwidth=8
 
 "background
 set background=dark
@@ -87,7 +87,7 @@ highlight Identifier   cterm=NONE     ctermfg=14     ctermbg=16
 highlight Statement    cterm=NONE     ctermfg=112    ctermbg=16
 highlight PreProc      cterm=NONE     ctermfg=160    ctermbg=16
 highlight Type         cterm=NONE     ctermfg=2      ctermbg=16
-highlight Special      cterm=NONE     ctermfg=160    ctermbg=16
+highlight cSpecial     cterm=NONE     ctermfg=160    ctermbg=16
 highlight Error        cterm=NONE     ctermfg=16     ctermbg=160
 highlight Todo         cterm=NONE     ctermfg=16     ctermbg=227
 highlight Search       cterm=NONE     ctermfg=16     ctermbg=208
